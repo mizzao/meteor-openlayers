@@ -10,7 +10,7 @@ This package pulls OpenLayers with code, CSS, and images.
 Install with Meteorite:
 
 ```
-mrt add openlayers
+meteor add mizzao:openlayers
 ```
 
 Check out the docs at http://openlayers.org/.

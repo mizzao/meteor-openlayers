@@ -1,6 +1,15 @@
-Package.on_use(function (api) {
+Package.describe({
+  summary: "OpenLayers: Free Maps for the Web",
+  // MANDATORY version number. New in 0.9.0.
+  version: "2.13.1",
+  // Optional github URL to your source repository. New in 0.9.0.
+  git: "https://github.com/mizzao/meteor-openlayers.git"
+});
 
-  api.use("build-fetcher");
+Package.onUse(function (api) {
+  api.versionsFrom("METEOR-CORE@0.9.0-atm");
+
+  api.use("mizzao:build-fetcher@>=0.2.0");
 
   /**
    * XXX Note that this grabs the current version specified in
