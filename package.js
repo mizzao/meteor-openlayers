@@ -9,7 +9,7 @@ Package.describe({
 Package.onUse(function (api) {
   api.versionsFrom("METEOR-CORE@0.9.0-atm");
 
-  api.use("mizzao:build-fetcher@>=0.2.0");
+  api.use("mizzao:build-fetcher@0.2.0");
 
   /**
    * XXX Note that this grabs the current version specified in
