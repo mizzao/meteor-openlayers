@@ -1,4 +1,5 @@
 Package.describe({
+  name: "mizzao:openlayers",
   summary: "OpenLayers: Free Maps for the Web",
   // MANDATORY version number. New in 0.9.0.
   version: "2.13.1",
@@ -7,7 +8,7 @@ Package.describe({
 });
 
 Package.onUse(function (api) {
-  api.versionsFrom("METEOR-CORE@0.9.0-atm");
+  api.versionsFrom("METEOR@0.9.0");
 
   api.use("mizzao:build-fetcher@0.2.0");
 
