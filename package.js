@@ -8,7 +8,7 @@ Package.describe({
 });
 
 Package.onUse(function (api) {
-  api.versionsFrom("METEOR@0.9.0");
+  api.versionsFrom("0.9.2");
 
   api.use("mizzao:build-fetcher@0.2.0");
 
