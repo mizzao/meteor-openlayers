@@ -8,7 +8,7 @@ Package.describe({
 });
 
 Package.onUse(function (api) {
-  api.versionsFrom("0.9.3.1");
+  api.versionsFrom("0.9.4");
 
   api.use("mizzao:build-fetcher@0.2.0");
 
@@ -21,7 +21,10 @@ Package.onUse(function (api) {
    * added bare. It also means we avoid scoping problems from Meteor wrapping
    * it.
    */
-  api.add_files("openlayers.fetch.json", "client");
+
+  // TODO the bare: true option should not be here, but for
+  // https://github.com/meteor/meteor/issues/2834
+  api.add_files("openlayers.fetch.json", "client", { bare: true });
   api.add_files("config.js", "client");
 
   api.export(['OpenLayers'], "client");
