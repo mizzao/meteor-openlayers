@@ -1,14 +1,12 @@
 Package.describe({
   name: "mizzao:openlayers",
   summary: "OpenLayers: Free Maps for the Web",
-  // MANDATORY version number. New in 0.9.0.
-  version: "2.13.1_1",
-  // Optional github URL to your source repository. New in 0.9.0.
+  version: "2.13.1_2",
   git: "https://github.com/mizzao/meteor-openlayers.git"
 });
 
 Package.onUse(function (api) {
-  api.versionsFrom("1.0");
+  api.versionsFrom("1.2.0.1");
 
   api.use("mizzao:build-fetcher@0.2.0");
 
@@ -21,34 +19,41 @@ Package.onUse(function (api) {
    * added bare. It also means we avoid scoping problems from Meteor wrapping
    * it.
    */
-  api.add_files("openlayers.fetch.json", "client");
-  api.add_files("config.js", "client");
+  api.addFiles("openlayers.fetch.json", "client");
+  api.addFiles("config.js", "client");
 
   api.export(['OpenLayers'], "client");
 
-  var path = Npm.require('path');
+  const path = Npm.require('path');
 
-  api.add_files(path.join("openlayers", "img", "blank.gif"));
-  api.add_files(path.join("openlayers", "img", "cloud-popup-relative.png"));
-  api.add_files(path.join("openlayers", "img", "drag-rectangle-off.png"));
-  api.add_files(path.join("openlayers", "img", "drag-rectangle-on.png"));
-  api.add_files(path.join("openlayers", "img", "east-mini.png"));
-  api.add_files(path.join("openlayers", "img", "layer-switcher-maximize.png"));
-  api.add_files(path.join("openlayers", "img", "layer-switcher-minimize.png"));
-  api.add_files(path.join("openlayers", "img", "marker-blue.png"));
-  api.add_files(path.join("openlayers", "img", "marker-gold.png"));
-  api.add_files(path.join("openlayers", "img", "marker-green.png"));
-  api.add_files(path.join("openlayers", "img", "marker.png"));
-  api.add_files(path.join("openlayers", "img", "measuring-stick-off.png"));
-  api.add_files(path.join("openlayers", "img", "measuring-stick-on.png"));
-  api.add_files(path.join("openlayers", "img", "north-mini.png"));
-  api.add_files(path.join("openlayers", "img", "panning-hand-off.png"));
-  api.add_files(path.join("openlayers", "img", "panning-hand-on.png"));
-  api.add_files(path.join("openlayers", "img", "slider.png"));
-  api.add_files(path.join("openlayers", "img", "south-mini.png"));
-  api.add_files(path.join("openlayers", "img", "west-mini.png"));
-  api.add_files(path.join("openlayers", "img", "zoombar.png"));
-  api.add_files(path.join("openlayers", "img", "zoom-minus-mini.png"));
-  api.add_files(path.join("openlayers", "img", "zoom-plus-mini.png"));
-  api.add_files(path.join("openlayers", "img", "zoom-world-mini.png"));
+  const files = [
+    "blank.gif",
+    "cloud-popup-relative.png",
+    "drag-rectangle-off.png",
+    "drag-rectangle-on.png",
+    "east-mini.png",
+    "layer-switcher-maximize.png",
+    "layer-switcher-minimize.png",
+    "marker-blue.png",
+    "marker-gold.png",
+    "marker-green.png",
+    "marker.png",
+    "measuring-stick-off.png",
+    "measuring-stick-on.png",
+    "north-mini.png",
+    "panning-hand-off.png",
+    "panning-hand-on.png",
+    "slider.png",
+    "south-mini.png",
+    "west-mini.png",
+    "zoombar.png",
+    "zoom-minus-mini.png",
+    "zoom-plus-mini.png",
+    "zoom-world-mini.png"
+  ];
+
+  for (var i in files) {
+    api.addAssets( path.join("openlayers", "img", files[i]), 'client');
+  }
+
 });
