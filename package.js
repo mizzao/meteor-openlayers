@@ -1,14 +1,14 @@
 Package.describe({
   name: "mizzao:openlayers",
   summary: "OpenLayers: Free Maps for the Web",
-  version: "2.13.1_2",
+  version: "2.13.1_3",
   git: "https://github.com/mizzao/meteor-openlayers.git"
 });
 
 Package.onUse(function (api) {
-  api.versionsFrom("1.2.0.1");
+  api.versionsFrom("1.3.5.1");
 
-  api.use("mizzao:build-fetcher@0.2.0");
+  api.use("mizzao:build-fetcher@0.3.2");
 
   /**
    * XXX Note that this grabs the current version specified in
